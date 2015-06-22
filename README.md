@@ -58,8 +58,13 @@ $ vagrant ssh
   - projection of the input signal onto a series of basis functions
   - assumes that the samples you choose are a stable representation of all time
   - discretized FT, requires to choose number of samples in time domain and the series of basis functions, output is the projection into the frequency domain of both amplitude and phase (samples are collapsed and axis is now frequency response)
+  - requires exact signal periodicity in the window, avoid this by applying a window function to reduce the impact of cutting a window and making the signal non-periodic (more on windowing tomorrow)
+  - is an identity function/transformation - independently of the number of frequency samples taken for the DFT
+  - is reversable, with inverse DFT
 - [Fast Fourier transform (FFT)](https://en.wikipedia.org/wiki/Fast_Fourier_transform)
   - an algorithm to compute the DFT and it's inverse
+  - complexity is O(N log N)
+  - improves over a naive DFT implementation which is O(N^2)
 - [Short-time Fourier transform (STFT)](https://en.wikipedia.org/wiki/Short-time_Fourier_transform)
   - like DFT but does not assume that the window or samples chosen are representative of the entire signal
   - more tomorrow
