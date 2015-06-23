@@ -5,6 +5,10 @@ Based on a compressed and higher level version of the Coursera MOOC
 We attended 3-days in Barcelona with Prof. Serra and 2-days in Berlin to finish
 things off.
 
+## Lectures
+
+Lecture slides are in [sms-tools](https://github.com/MTG/sms-tools/tree/master/lectures).
+
 ## Getting Started
 
 Use the local `Vagrantfile` to build a VM with `sms-tools` and `essentia`
