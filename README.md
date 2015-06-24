@@ -45,6 +45,7 @@ $ vagrant ssh
 
 ## Day 1
 
+- Lectures 1, 2
 - mathematics
   - [sinusoidal functions](https://en.wikipedia.org/wiki/Sine_wave)
   - [complex numbers](https://en.wikipedia.org/wiki/Complex_number)
@@ -76,6 +77,7 @@ $ vagrant ssh
 
 ## Day 2
 
+- Lectures 3, 4
 - properties of the DFT for real signals (not complex)
 - linearity
   - amplitude increase in input signal
@@ -130,3 +132,41 @@ $ vagrant ssh
   - window is applied before zero-padding, which is before STFT
 - properties and parameters of STFT
 - window size is the most important and has the most effect
+- window types/algorithms each have well defined main lobe widths, independent of window size
+- window size must be odd in order to ensure that the phase is flat for each main lobe in the frequency domain
+- DFT always has the tradeoff of window size/number of samples/frequency resolution and time resolution -- frequency and time resolution are always at odds
+- less time resolution means you cannot capture things like instrument attack (e.g. very start of striking a drum membrane)
+
+## Day 3
+
+- Lectures 5, 6
+- [sinusoidal model](https://en.wikipedia.org/wiki/Sinusoidal_model)
+- spectrum sinewave
+- sinewaves as spectral peaks
+- for finding relevant sinusoids in a signal
+- just STFT is often not enough
+- relies on instantaneous measurement of amplitude and frequency (time indexed)
+- real signals are time-variant, periodic signals
+- ? use the sinusoidal model after DFT, to allow identifying arbitrary fundamental frequencies
+- DFT is a lossless transformation, sinusoidal model is not
+- with DFT, you need to represent a whole spectrum of frequencies, even when the input signal is not that complex
+- sinusoidal model captures the main perceptual elements of the input signal
+- we lose mathematical identity since we lose information
+- to get a good frequency resolution, you need zero-padding plus parabolic interpolation to find the "more true" component frequencies
+- [harmonic model](https://en.wikipedia.org/wiki/Harmonic_analysis) is next level
+- sinusoids-partials-harmonics
+- poluphonic vs monophonic signals
+- harmonic detection
+- harmonic model system
+- harmonic model is very close to sinusoidal model, but frequencies are not an arbitrary frequencies (as in sinusoidal model) but are integer multiples of the fundamental frequency
+- harmonic model needs monophonic signal or separation/segmentation of polyphonic signal into parts
+- finding fundamental frequency
+- in a monophonic signal
+  - in the time domain, the period (where signal repeats) is the fundamental frequency
+  - in the frequency domain, the fundamental frequency is the main lobe that explains the others (lowest such that most other lobes are a multiple of it)
+  - use autocorrelation in the time domain (signal over time) to find period
+- in a polyphonic signal
+  - in the time domain, not possible
+  - in the frequency domain, it's feasible but needs multiple frames
+- current most common/popular for finding fundamental frequency (in the time domain primarily) is the YIN algorithm
+- [Melody Extraction from Polyphonic Music Signals using Pitch Contour Characteristics](http://www.mtg.upf.edu/system/files/publications/SalamonGomezMelodyTASLP2012.pdf). Salamon and Gómez, 2012
