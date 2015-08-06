@@ -35,12 +35,14 @@ $ vagrant ssh
   - harmonic models
     - detecting fundamental frequencies
     - leading to mid and high-level features
-- Day 4, August xx
+- Day 4, August 06
+  - review of previous days
   - sinusoidal plus residual modeling
+  - stochastic model
   - sound/music description
     - spectral-based audio features
     - description of sound/music events and collections
-- Day 5, August xx
+- Day 5, August 07
   - cont. of Day 4
 
 ## Day 1
@@ -170,3 +172,28 @@ $ vagrant ssh
   - in the frequency domain, it's feasible but needs multiple frames
 - current most common/popular for finding fundamental frequency (in the time domain primarily) is the YIN algorithm
 - [Melody Extraction from Polyphonic Music Signals using Pitch Contour Characteristics](http://www.mtg.upf.edu/system/files/publications/SalamonGomezMelodyTASLP2012.pdf). Salamon and Gómez, 2012
+
+## Day 4
+
+- Lectures 7, 8
+- review of the last few days
+- frequency is more stable, phase is more affected by things like noise
+- stochastic model
+  - stochastic signals
+  - some signals are best described with probabilistic/statistical models
+  - autocorrelation, power spectral density
+  - approximation: LPC, envelope approximation
+- sinusoidal/harmonic plus residual models (SpR, HpR)
+- residual subtraction
+- harmonic plus residual system
+- sinusoidal/harmonic plus stochastic model (SpS, HpS)
+- stochastic model of residual
+- harmonic plus stochastic system
+- transformations of audio based on models we now know
+- to determine the frame size given a signal and window type: (sampling freq / distance between freq resolution needed) * window type lobe width
+  
+## Day 5
+
+- Lectures 9, 10
+
+fin
