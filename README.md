@@ -195,5 +195,15 @@ $ vagrant ssh
 ## Day 5
 
 - Lectures 9, 10
-
-fin
+- spectral-based audio features
+- introduction to audio features
+- single-frame spectral features
+- multi-frame spectral features
+- usually always contains ZCR and loudness features
+- spectral centroid == spectral [weighted arithmetic mean](https://en.wikipedia.org/wiki/Weighted_average)
+- use spectral centroid and loudness together to make sense of silence
+- silence (noise) as high spectral centroid so needs to be combined with loudness
+- MFCC 0 is roughly the same as loudness feature
+- features from MFCC should always include derivatives between frames as MFCC is instantaneous and derivative captures the change between frames
+- music information plane
+- description of sounds and music, recordings and collections
